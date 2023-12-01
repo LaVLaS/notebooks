@@ -199,6 +199,10 @@ base-c9s-python-3.9:
 cuda-c9s-python-3.9: base-c9s-python-3.9
 	$(call image,$@,cuda/c9s-python-3.9,$<)
 
+.PHONY: cuda-12-c9s-python-3.9
+cuda-12-c9s-python-3.9: base-c9s-python-3.9
+	$(call image,$@,cuda/12/c9s-python-3.9,$<)
+
 .PHONY: rstudio-c9s-python-3.9
 rstudio-c9s-python-3.9: base-c9s-python-3.9
 	$(call image,$@,rstudio/c9s-python-3.9,$<)

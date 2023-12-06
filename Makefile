@@ -139,9 +139,13 @@ cuda-ubi9-python-3.9: base-ubi9-python-3.9
 	$(call image,$@,cuda/ubi9-python-3.9,$<)
 
 # Build and push cuda-ubi9-python-3.9 image to the registry
-.PHONY: cuda-12-ubi9-python-3.9
-cuda-12-ubi9-python-3.9: base-ubi9-python-3.9
-	$(call image,$@,cuda/12/ubi9-python-3.9,$<)
+.PHONY: cuda-12.0.0-ubi9-python-3.9
+cuda-12.0.0-ubi9-python-3.9: base-ubi9-python-3.9
+	$(call image,$@,cuda/12.0.0/ubi9-python-3.9,$<)
+
+.PHONY: cuda-12.2.2-ubi9-python-3.9
+cuda-12.2.2-ubi9-python-3.9: base-ubi9-python-3.9
+	$(call image,$@,cuda/12.2.2/ubi9-python-3.9,$<)
 
 # Build and push cuda-jupyter-minimal-ubi9-python-3.9 image to the registry
 .PHONY: cuda-jupyter-minimal-ubi9-python-3.9
@@ -149,8 +153,12 @@ cuda-jupyter-minimal-ubi9-python-3.9: cuda-ubi9-python-3.9
 	$(call image,$@,jupyter/minimal/ubi9-python-3.9,$<)
 
 # Build and push cuda-jupyter-minimal-ubi9-python-3.9 image to the registry
-.PHONY: cuda-12-jupyter-minimal-ubi9-python-3.9
-cuda-12-jupyter-minimal-ubi9-python-3.9: cuda-12-ubi9-python-3.9
+.PHONY: cuda-12.0.0-jupyter-minimal-ubi9-python-3.9
+cuda-12.0.0-jupyter-minimal-ubi9-python-3.9: cuda-12.0.0-ubi9-python-3.9
+	$(call image,$@,jupyter/minimal/ubi9-python-3.9,$<)
+
+.PHONY: cuda-12.2.2-jupyter-minimal-ubi9-python-3.9
+cuda-12.2.2-jupyter-minimal-ubi9-python-3.9: cuda-12.2.2-ubi9-python-3.9
 	$(call image,$@,jupyter/minimal/ubi9-python-3.9,$<)
 
 # Build and push cuda-jupyter-datascience-ubi9-python-3.9 image to the registry
@@ -159,8 +167,12 @@ cuda-jupyter-datascience-ubi9-python-3.9: cuda-jupyter-minimal-ubi9-python-3.9
 	$(call image,$@,jupyter/datascience/ubi9-python-3.9,$<)
 
 # Build and push cuda-jupyter-datascience-ubi9-python-3.9 image to the registry
-.PHONY: cuda-12-jupyter-datascience-ubi9-python-3.9
-cuda-12-jupyter-datascience-ubi9-python-3.9: cuda-12-jupyter-minimal-ubi9-python-3.9
+.PHONY: cuda-12.0.0-jupyter-datascience-ubi9-python-3.9
+cuda-12.0.0-jupyter-datascience-ubi9-python-3.9: cuda-12.0.0-jupyter-minimal-ubi9-python-3.9
+	$(call image,$@,jupyter/datascience/ubi9-python-3.9,$<)
+
+.PHONY: cuda-12.2.2-jupyter-datascience-ubi9-python-3.9
+cuda-12.2.2-jupyter-datascience-ubi9-python-3.9: cuda-12.2.2-jupyter-minimal-ubi9-python-3.9
 	$(call image,$@,jupyter/datascience/ubi9-python-3.9,$<)
 
 # Build and push cuda-jupyter-tensorflow-ubi9-python-3.9 image to the registry
@@ -169,8 +181,12 @@ cuda-jupyter-tensorflow-ubi9-python-3.9: cuda-jupyter-datascience-ubi9-python-3.
 	$(call image,$@,jupyter/tensorflow/ubi9-python-3.9,$<)
 
 # Build and push cuda-jupyter-tensorflow-ubi9-python-3.9 image to the registry
-.PHONY: cuda-12-jupyter-tensorflow-ubi9-python-3.9
-cuda-12-jupyter-tensorflow-ubi9-python-3.9: cuda-12-jupyter-datascience-ubi9-python-3.9
+.PHONY: cuda-12.0.0-jupyter-tensorflow-ubi9-python-3.9
+cuda-12.0.0-jupyter-tensorflow-ubi9-python-3.9: cuda-12.0.0-jupyter-datascience-ubi9-python-3.9
+	$(call image,$@,jupyter/tensorflow/ubi9-python-3.9,$<)
+
+.PHONY: cuda-12.2.2-jupyter-tensorflow-ubi9-python-3.9
+cuda-12.2.2-jupyter-tensorflow-ubi9-python-3.9: cuda-12.2.2-jupyter-datascience-ubi9-python-3.9
 	$(call image,$@,jupyter/tensorflow/ubi9-python-3.9,$<)
 
 # Build and push jupyter-pytorch-ubi9-python-3.9 image to the registry
@@ -179,8 +195,12 @@ jupyter-pytorch-ubi9-python-3.9: cuda-jupyter-datascience-ubi9-python-3.9
 	$(call image,$@,jupyter/pytorch/ubi9-python-3.9,$<)
 
 # Build and push jupyter-pytorch-ubi9-python-3.9 image to the registry
-.PHONY: cuda-12-jupyter-pytorch-ubi9-python-3.9
-cuda-12-jupyter-pytorch-ubi9-python-3.9: cuda-12-jupyter-datascience-ubi9-python-3.9
+.PHONY: cuda-12.0.0-jupyter-pytorch-ubi9-python-3.9
+cuda-12.0.0-jupyter-pytorch-ubi9-python-3.9: cuda-12.0.0-jupyter-datascience-ubi9-python-3.9
+	$(call image,$@,jupyter/pytorch/ubi9-python-3.9,$<)
+
+.PHONY: cuda-12.2.2-jupyter-pytorch-ubi9-python-3.9
+cuda-12.2.2-jupyter-pytorch-ubi9-python-3.9: cuda-12.2.2-jupyter-datascience-ubi9-python-3.9
 	$(call image,$@,jupyter/pytorch/ubi9-python-3.9,$<)
 
 # Build and push jupyter-trustyai-ubi9-python-3.9 image to the registry
@@ -224,9 +244,13 @@ base-c9s-python-3.9:
 cuda-c9s-python-3.9: base-c9s-python-3.9
 	$(call image,$@,cuda/c9s-python-3.9,$<)
 
-.PHONY: cuda-12-c9s-python-3.9
-cuda-12-c9s-python-3.9: base-c9s-python-3.9
-	$(call image,$@,cuda/c9s-python-3.9,$<)
+.PHONY: cuda-12.0.0-c9s-python-3.9
+cuda-12.0.0-c9s-python-3.9: base-c9s-python-3.9
+	$(call image,$@,cuda/12.0.0/c9s-python-3.9,$<)
+
+.PHONY: cuda-12.2.2-c9s-python-3.9
+cuda-12.2.2-c9s-python-3.9: base-c9s-python-3.9
+	$(call image,$@,cuda/12.2.2/c9s-python-3.9,$<)
 
 .PHONY: rstudio-c9s-python-3.9
 rstudio-c9s-python-3.9: base-c9s-python-3.9
